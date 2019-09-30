@@ -1,0 +1,114 @@
+#!/bin/csh  -f
+# HIBRIDON bin/makeobj $Revision: 2009.1 $ --- create config files and compile source
+# the PATH variable should be set to include the hibridon bin directory
+
+set basedir=`hibriddir`
+
+if (-e $basedir/logs/obj.log) then
+  mv $basedir/logs/obj.log $basedir/logs/obj.log.BAK
+endif
+echo "" > $basedir/logs/obj.log
+
+echo ""
+# create common directory
+echo ""
+echo "untar'ing common files ..."
+echo "untar'ing common files ..." >>& $basedir/logs/obj.log
+tar -xvf $basedir/src/hicommon.tar >>& $basedir/logs/obj.log
+# set help directory
+echo ""
+echo "setting help directory ..."
+echo "setting help directory ..." >>& $basedir/logs/obj.log
+if (-e $basedir/src/common/parhlp) then
+  rm $basedir/src/common/parhlp
+endif
+cd $basedir
+set comdir = `pwd`
+sed s+xxxx+"$comdir"+ $comdir/src/common/parhlp.t > $basedir/src/common/parhlp
+
+# creating hib_help program
+echo ""
+echo "creating hib_help ..."
+echo "creating hib_help ..." >>& $basedir/logs/obj.log
+$basedir/bin/runhscript >>& $basedir/logs/obj.log
+cd $basedir/src
+echo ""
+echo "compiling hib_help"
+echo "compiling hib_help" >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib -o $basedir/bin/hib_help -n  hhelp.f >>& $basedir/logs/obj.log
+rm $basedir/src/hhelp.o >>& $basedir/logs/obj.log
+# compile fortran programs
+echo ""
+echo "removing old object files hi*.o ..."
+echo "removing old object files hi*.o ..." >>& $basedir/logs/obj.log
+echo ""
+echo "compiling hi*.f files (this may take a few minutes) ..."
+echo "compiling hi*.f files (this may take a few minutes) ..." >>& $basedir/logs/obj.log
+
+cd $basedir/src
+$basedir/bin/ftn_hib  -O  hiamp.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hib*.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  himatrix.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hihypxsc.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hidifcrs.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hicommon.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hip*.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  his*.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hit*.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hiu*.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O  hivector.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -O1   hiiolib_f.f >>& $basedir/logs/obj.log
+$basedir/bin/ftn_hib  -n  hinput.f >>& $basedir/logs/obj.log
+#$basedir/bin/ftn_hib  -n  hiversion.f >>& $basedir/logs/obj.log
+#$basedir/bin/ftn_hib  -d  hi*.f >>& $basedir/logs/obj.log
+
+
+cd $basedir/bin
+echo ""
+echo "removing .log files from $basedir/bin ..."
+rm $basedir/bin/*.log >>& $basedir/logs/obj.log
+echo "all source code converted and compiled"
+echo "all source code converted and compiled" >>& $basedir/logs/obj.log
+echo ""
+# serching for compiler errors
+
+#!/bin/csh -f 
+set basedir = `hibriddir`
+set res = `grep " unix-ifort" $basedir/CONFIG`
+if ("$res" != "") then
+   set res1 = `grep "compilation aborted" $basedir/logs/obj.log`
+   if "$res1" == "" then
+       echo "all compilations successfully completed"
+   else
+       echo "the following problems occurred:"
+       echo "   $res1"
+   endif
+endif
+set res = `grep " unix-xlf" $basedir/CONFIG`
+if ("$res" != "") then
+   set res1 = `grep "Compilation failed" $basedir/logs/obj.log`
+   if "$res1" == "" then
+       echo "all compilations successfully completed"
+   else
+       echo "the following problems occurred:"
+       echo "   $res1"
+   endif
+endif
+set res = `grep " unix-g95" $basedir/CONFIG`
+if ("$res" != "") then
+   set res1 = `grep "error" $basedir/logs/obj.log`
+   if "$res1" == "" then
+       echo "all compilations successfully completed"
+   else
+       echo "the following problems occurred:"
+       echo "   $res1"
+   endif
+endif
+echo ""
+
+echo "examine $basedir/logs/obj.log for diagnostic and/or error messages"
+echo ""
+echo "run hib_help to access on-line help"
+echo ""
+
+exit

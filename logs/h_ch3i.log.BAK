@@ -1,0 +1,6 @@
+
+compiling pot subroutine for hib_ch3i_120 with ...
+compiling pot_ch3i.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+failed:
+cat: pot_ch3i.log: No such file or directory

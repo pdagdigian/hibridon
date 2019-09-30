@@ -1,0 +1,11 @@
+! Use example below to transform mxma calls to dgemm
+       call mxma4(a,mcola,mrowa,b,mcolb,mrowb,
+     1             r,mcolr,mrowr,ncol,nlink,nrow)
+        return
+      end if
+cend
+cstart unix-blas3
+c;      if(mcolr.eq.1) then
+c;        if(mcola.eq.1.and.mcolb.eq.1) then
+c;          call dgemm('N','N',ncol,nrow,nlink,1.0d0,a,mrowa,
+c;     1                    b,max(nlink,mrowb),0.0d0,r,mrowr)

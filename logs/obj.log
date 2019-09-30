@@ -1,0 +1,242 @@
+
+untar'ing common files ...
+./._common
+common/
+common/._.DS_Store
+common/.DS_Store
+common/bausr
+common/comdot
+common/ground
+common/hicommon.tar
+common/ipar
+common/logdef
+common/lpar
+common/._machines.h
+common/machines.h
+common/._parbas
+common/parbas
+common/parbasl
+common/parcode
+common/parhlp
+common/._parhlp.t
+common/parhlp.t
+common/parlbuf
+common/parllbf
+common/parpot
+common/parsys
+common/._partens
+common/partens
+common/parvfit
+common/rpar
+common/syusr
+common/vax1
+common/vax2
+setting help directory ...
+creating hib_help ...
+control.file: Command not found.
+
+hhelp.f file converted, copying back ...
+mv: cannot stat ‘hhelp.new’: No such file or directory
+compiling hib_help
+compiling hhelp.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8
+compilation done
+linking /home-2/jklos@umd.edu/software/hib44_20190919/bin/hib_help
+removing old object files hi*.o ...
+compiling hi*.f files (this may take a few minutes) ...
+compiling hiamp.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba13p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba1d3p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba1del.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba1sg1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba22p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2del.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2mol.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2pi1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2pi.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2sg1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba2sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba3p2s.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiba3sg1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibaastp1.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibaastp2.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibaastp3.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibaastp.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibach2x.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibadiat2p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibah2p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibah3p.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibapi.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibasgpi1.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibasgpi.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibasphtp.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibastp1.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibastp1sg.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibastp.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibastpln.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiblas.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibound.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibrid1.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibrid2.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibrid3.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibrid4.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hibrid5.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling himatrix.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+common/vax1(7): remark #7713: This statement function has not been used.   [AND]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+---------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [XOR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+--------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [OR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [SHIFTL]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+-------------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [SHIFTR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+--------------------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [COMPL]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+-----------------------------------------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [AND]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+---------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [XOR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+--------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [OR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [SHIFTL]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+-------------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [SHIFTR]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+--------------------------------^
+common/vax1(7): remark #7713: This statement function has not been used.   [COMPL]
+      integer xor,or,and,shiftl,shiftr,popcnt,poppar,compl
+-----------------------------------------------------^
+compilation done
+compiling hihypxsc.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hidifcrs.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hicommon.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hipotutil.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiprsbr.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling histmix.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hisyminv.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hisystem.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hitensor.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hitrnprt.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiutil.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hivector.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+compiling hiiolib_f.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O1
+compilation done
+compiling hinput.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8
+compilation done
+all source code converted and compiled

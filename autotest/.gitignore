@@ -1,0 +1,7 @@
+*.test
+.directory
+*~
+*#
+*.o
+*.so
+*.pyc

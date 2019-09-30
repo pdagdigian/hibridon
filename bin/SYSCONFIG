@@ -1,0 +1,12 @@
+      data build(1) /
+     :  'SYS=RedHat 7.6.1810 ( 3.10.0-862.9.1.el7.x86_64); MACH=unix-x86 unix-ifort'/
+      data build(2) /
+     :  'CC=; FC=ifort -O3 -save -i8'/
+      data build(3) /
+     :  ''/
+      data build(4) /
+     : ''/
+      data build(5) /
+     : ''/
+cend
+      end

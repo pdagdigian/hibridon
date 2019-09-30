@@ -1,0 +1,19 @@
+
+compiling pot subroutine for hib_ohh2_bausr_150 with ...
+compiling pot_ohh2_bausr.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8 -O3
+compilation done
+pot_ohh2_bausr successfully compiled ...
+hib_ohh2_bausr_150 being created at date 09/25/19 11:39:34 EDT with version 4.4
+removing old hiversion.f ...
+compiling hiversion.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8
+compilation done
+converting himain with kmax = 150
+compiling himain.f ... 
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -c -save -i8
+compilation done
+  fortran-based direct i/o routines used
+linking hib_ohh2_bausr_150
+ifort -132 -mcmodel=large -shared_intel -I/home-2/jklos@umd.edu/software/hib44_20190911/src -save -i8 -O3 -o hib_ohh2_bausr_150 hiamp.o hiba13p.o hiba1d3p.o hiba1del.o hiba1sg1sg.o hiba1sg.o hiba22p.o hiba2del.o hiba2mol.o hiba2pi1sg.o hiba2pi.o hiba2sg1sg.o hiba2sg.o hiba3p2s.o hiba3sg1sg.o hibaastp1.o hibaastp2.o hibaastp3.o hibaastp.o hibach2x.o hibadiat2p.o hibah2p.o hibah3p.o hibapi.o hibasgpi1.o hibasgpi.o hibasphtp.o hibastp1.o hibastp1sg.o hibastpln.o hibastp.o hiblas.o hibound.o hibrid1.o hibrid2.o hibrid3.o hibrid4.o hibrid5.o hicommon.o hidifcrs.o hihypxsc.o hiiolib_f.o himain.o himatrix.o hinput.o hipotutil.o hiprsbr.o histmix.o hisyminv.o hisystem.o hitensor.o hitrnprt.o hiutil.o hivector.o hiversion.o pot/pot_ohh2_bausr.o -L/software/cmshared/intel/lib/intel64 -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -lpthread -liomp5 -lm
+ld: Warning: size of symbol `coconv_' changed from 24 in hibrid2.o to 16 in pot/pot_ohh2_bausr.o

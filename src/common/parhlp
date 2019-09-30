@@ -1,0 +1,5 @@
+*comdeck parhlp.t
+cstart unix
+      parameter (helpdir='/home-net/home-2/jklos@umd.edu/software/hib44_20190919/doc/',
+     :           helptail='.hlp')
+cend

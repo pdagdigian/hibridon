@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+<title>eadiab.ex.html</title>
+
+<style type="text/css">
+ span.c3 {color: brown}
+ div.c2 {text-align: center}
+ h3.c1 {color: brown}
+</style>
+</head>
+<body>
+<div class="c2">
+<h3 class="c1">Example of the command EADIAB</h3>
+</div>
+<hr>
+In this example, I have added illustrative comments in brown to the actual output of the run. In addition, the various commands have been linked to the corresponding help files
+<p>The executable is hib_arn2_151 built with the command <tt>makehib arn2 151</tt><br></p>
+<p>The input file used here is <tt><a href="Arn2_eadiab.inp">Arn2_eadiab.inp</a></tt></p>
+<hr>
+<pre>
+<span class="c3">Initiate execution of your code</span>
+$ hib_arn2_151
+ --------------------------------------------------------------------------
+           HIBRIDON SCATTERING CODE V 4.4 BUILD DATE 04/04/12 16:21:33 EDT
+
+      AUTHORS: M. ALEXANDER, D. MANOLOPOULOS, H.-J. WERNER, B. FOLLMEG,
+               P. DAGDIGIAN
+ CONTRIBUTORS: D. LEMOINE, P. VOHRALIK, G. COREY, R. JOHNSON, T. ORLIKOWSKI,
+          A. BERNING, A. DEGLI-ESPOSTI, C. RIST, B. POUILLY, J. KLOS, Q. MA,
+          G. VAN DER SANDEN, M. YANG, F. DE WEERD, S. GREGURICK, F. LIQUE
+ --------------------------------------------------------------------------
+           BUILD CONFIGURATION:
+SYS=3.2.13-1-ARCH ( 3.2.13-1-ARCH); MACH=unix-x86 unix-ifort unix-darwin64
+CC=; FC=ifort -132 -mcmodel=medium -shared-intel -align all -O3 -xHOST -save
+LIB_ROOT=/
+LIBRARIES:  -lmkl_rt /
+  -lpthread -lm
+ --------------------------------------------------------------------------
+ Hibridon&gt; inp=arn2_eadiab.inp
+ WRSMAT IS .FALSE., ONLY ADIABATIC ENERGIES SAVED
+ <span class="c3">run the calculations to generate the information for the subseqent calculations of 
+ the adbiatic bender potentials</span>
+ Hibridon&gt; run
+ WRSMAT IS .FALSE., ONLY ADIABATIC ENERGIES SAVED
+ ** WAVEFUNCTION SAVED IN FILE Job.wfu
+ ** J =    0 JLPAR = 1 FINISHED;  CPU: 00:00:00   WALL: 00:00:00   DATE: Apr 20 13:57:03 2012
+ ===============================================================================
+ **** END OF CALCULATION ****
+      MAXIMUM NUMBER OF CHANNELS USED WAS:     5
+      TIMING:  ELAPSED 00:00:00 / CPU 00:00:00 / MP RATIO    Inf %
+      CURRENT DATE:  Apr 20 13:57:03 2012
+ ===============================================================================
+ <span class="c3">request calculation of the adiabatic bender energies</span>
+ Hibridon&gt; eadiab
+ ** WRITING ADIABATIC ENERGIES TO Job.eadiab
+    FROM CALCULATION ON: Apr 20 13:57:03 2012
+    INITIAL JOB LABEL:   N2-Ar CC PATTENGILL POTENTIAL
+    INITIAL POT NAME: PATTENGILL-LABUDDE-BERNSTEIN AR-N2
+ Hibridon&gt; quit
+ <span class="c3">The adiabatic bender energies are stored in the file {Jobname}.eadiab (in this example the file is this is Job.eadiab)
+&#13;These are appended onto any previous contents of this file, so you may want to erase the file {Jobname}.flx beforehand<br></span>
+ <span class="c3">Here is the result:</span>
+    FROM CALCULATION ON: Apr 20 13:57:03 2012
+    INITIAL JOB LABEL:   N2-Ar CC PATTENGILL POTENTIAL
+    INITIAL POT NAME: PATTENGILL-LABUDDE-BERNSTEIN AR-N2
+ ** ADIABATIC ENERGIES FROM NO.    1 TO NO.    5 REQUESTED
+   6.04000   241.57251   393.01618   570.47669   745.58164   870.07100
+   6.12120   169.70980   304.30108   454.73414   600.02835   708.51451
+   6.20484   110.38761   230.28543   357.75415   477.31895   573.48942
+   6.29098    61.90177   168.91110   276.97392   374.54851   461.69131
+   6.37971    22.73159   118.33516   210.05038   289.21670   370.09951
+   6.47110    -8.47385    76.92290   154.83417   219.21537   295.94328
+   6.56523   -32.90946    43.24067   109.37164   162.76795   236.68921
+   6.66219   -51.62773    16.04547    71.97989   118.28703   190.04203
+   6.76206   -65.55172    -5.73091    41.39578    84.16543   153.94557
+   6.86492   -75.48757   -22.99982    16.83040    58.67131   126.57865
+   6.97087   -82.13613   -36.52450    -2.23031    40.09342   106.34861
+   7.07999   -86.10398   -46.91155   -16.30472    26.95332    91.88387
+   7.19239   -87.91365   -54.60430   -26.04272    18.07430    82.02328
+   7.30816   -88.01285   -59.91736   -32.18995    12.53816    75.79973
+   7.42741   -86.78240   -63.10940   -35.48360     9.62055    72.41828
+   7.55023   -84.54215   -64.44158   -36.57149     8.74079    71.23176
+   7.67674   -81.55495   -64.19489   -35.98616     9.42816    71.71659
+   7.80704   -78.02989   -62.66184   -34.15395    11.29908    73.45098
+   7.94125   -74.12790   -60.13087   -31.41414    14.04094    76.09636
+   8.07949   -69.97162   -56.87074   -28.03670    17.39977    79.38193
+   8.22187   -65.65788   -53.11729   -24.23618    21.17048    83.09215
+   8.36853   -61.26792   -49.06596   -20.18243    25.18879    87.05651
+   8.51959   -56.87282   -44.87113   -16.00883    29.32448    91.14133
+   8.67517   -52.53476   -40.65044   -11.81898    33.47577    95.24301
+   8.83543   -48.30663   -36.49109    -7.69206    37.56441    99.28251
+   9.00049   -44.23144   -32.45613    -3.68732    41.53165   103.20082
+   9.17051   -40.34228   -28.58986     0.15226    45.33468   106.95520
+   9.34562   -36.66291   -24.92203     3.79684    48.94375   110.51604
+   9.52599   -33.20874   -21.47127     7.22719    52.33959   113.86430
+   9.71177   -29.98802   -18.24760    10.43247    55.51134   116.98932
+   9.90312   -27.00307   -15.25447    13.40850    58.45479   119.88705
+  10.10022   -24.25148   -12.49036    16.15625    61.17085   122.55855
+  10.30322   -21.72718    -9.94998    18.68058    63.66437   125.00873
+  10.51232   -19.42137    -7.62533    20.98926    65.94310   127.24542
+  10.72769   -17.32335    -5.50645    23.09211    68.01687   129.27847
+  10.94952   -15.42112    -3.58206    25.00039    69.89689   131.11911
+  11.17801   -13.70196    -1.84010    26.72617    71.59526   132.77941
+  11.41335   -12.15284    -0.26812    28.28197    73.12450   134.27190
+  11.65575   -10.76073     1.14644    29.68043    74.49722   135.60916
+  11.90542    -9.51286     2.41595    30.93400    75.72588   136.80362
+  12.16258    -8.39690     3.55246    32.05480    76.82259   137.86736
+  12.42746    -7.40108     4.56751    33.05445    77.79897   138.81196
+  12.70028    -6.51427     5.47209    33.94399    78.66605   139.64841
+  12.98129    -5.72608     6.27653    34.73381    79.43419   140.38707
+  13.27073    -5.02679     6.99051    35.43361    80.11309   141.03757
+  13.56885    -4.40746     7.62300    36.05239    80.71174   141.60890
+  13.87592    -3.85983     8.18230    36.59847    81.23843   142.10929
+  14.19220    -3.37635     8.67603    37.07947    81.70077   142.54634
+  14.51796    -2.95015     9.11115    37.50235    82.10571   142.92696
+  14.85350    -2.57497     9.49401    37.87347    82.45958   143.25745
+  15.19911    -2.24515     9.83037    38.19857    82.76811   143.54351
+  15.55508    -1.95560    10.12543    38.48286    83.03647   143.79030
+  15.92173    -1.70171    10.38390    38.73100    83.26934   144.00245
+  16.29938    -1.47936    10.60998    38.94722    83.47089   144.18412
+  16.68836    -1.28487    10.80747    39.13528    83.64488   144.33903
+  17.08902    -1.11493    10.97975    39.29854    83.79466   144.47051
+  17.50169    -0.96662    11.12983    39.44001    83.92320   144.58150
+  17.92674    -0.83731    11.26040    39.56235    84.03316   144.67465
+  18.36454    -0.72469    11.37384    39.66795    84.12690   144.75228
+  18.81547    -0.62671    11.47228    39.75889    84.20649   144.81644
+  19.27994    -0.54154    11.55759    39.83705    84.27377   144.86896
+  19.75834    -0.46758    11.63141    39.90405    84.33038   144.91143
+  20.25109    -0.40341    11.69522    39.96135    84.37773   144.94526
+  20.75862    -0.34779    11.75029    40.01021    84.41708   144.97168
+  21.28138    -0.29962    11.79775    40.05176    84.44954   144.99177
+  21.81982    -0.25794    11.83860    40.08696    84.47606   145.00648
+  22.37441    -0.22190    11.87371    40.11669    84.49749   145.01663
+  22.94565    -0.19077    11.90383    40.14168    84.51457   145.02292
+  23.53402    -0.16390    11.92964    40.16260    84.52792   145.02598
+  24.14004    -0.14072    11.95171    40.18001    84.53812   145.02636
+  24.72376    -0.12190    11.96947    40.19360    84.54526   145.02470
+</pre>
+<hr>
+Return to:
+<div class="c2"><a href="eadiab.html">EADIAB command</a> | <a href="commands.html">Commands</a> | <a href="examples.html">Examples</a> | <a href="hibhelp.html">Hibridon Help</a><br></div>
+</body>
+</html>
