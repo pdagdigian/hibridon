@@ -26,10 +26,10 @@ c
 *
 *  modification of hibaastp basis routine
 *
-*  here, the body-frame z system lies along the C2 axis of the molecule,
-*  following green's convention.  for a molecule with only Cs symmetry,
-*  the molecule-frame z axis lies along the inertial a axis of the
-*  asymmetric top 
+*  here for a molecule with C2V symmetry, the body-frame z axis lies along 
+*  the C2 axis of the molecule,  following green's convention.  
+*  for a molecule with only Cs symmetry, the molecule-frame z axis lies 
+*  along the inertial a axis of the asymmetric top 
 *
 *  author:  paul dagdigian
 *  current revision:  10-sep-2019 by p.dagdigian
@@ -83,9 +83,8 @@ c
 *              (e.g. H2O, CH2, H2CO), so that only the ortho or para levels will be
 *              included depending on the value of the parameter iop in common
 *              /cosysi/ (see below)
-*              subroutine currently to allow only BA2 or A2BC type molecules,
-*              where the a inertial axis is an axis of C2 symmetry.
-*              set ihomo to .false. for a molecule with onl Cs symmetry.
+*              for a moleculw with only Cs symmetry, set ihomo to .false.
+*              in this case, set ihomo to .false.
 *    nu:       coupled-states projection index
 *    numin:    minimum coupled states projection index
 *              for cc calculations nu and numin are both set = 0 by calling
@@ -117,14 +116,15 @@ c
 *              expansion of potential
 *    numpot:   the number of the potential used, this variable is passed
 *              to the pot subroutine
-*    iop:      ortho/para label for molecular states. If ihomo=.true. then only
-*              para states will be included if iop=1 and only ortho states if
-*              iop=-1
 *    jmax:     the maximum rotational angular momentum for the asymmetric top
+*    iop:      ortho/para label for molecular states. If ihomo=.true. (i.e.
+*              for a molecule with C2v symmetry), then only para states will 
+*              be included if iop=1 and only ortho states if iop=-1
 *    iop:      for a molecule of C2v symmetry, this parameter is the ortho/para 
 *              label for the asymmetric top states.  para states only
 *              included if iop=1, and only ortho states if iop=-1
-*              for a molecule with Cs symmetry, set iop to zero.
+*              this parameter is not needed for a molecule with Cs symmetry and
+*              can be set to zero
 *    j2min:    minimum rotational angular momentum of molecule 2
 *    j2max:    maximum rotational angular momentum of molecule 2
 *    ipotsy2:  symmetry of potential.  set to 2 for homonuclear
@@ -226,10 +226,6 @@ c
 *
       zero = 0.d0
       two = 2.d0
-*
-*  this basis routine applies to symmetrical molecules.  so set ihomo =.true.
-*  COMMENT OUT NEXT LINE TO ALLOW Cs SYMMETRY MOLECULES (10-sep-2019 pjd)
-*      ihomo = .true.
 *  check for consistency in the values of flaghf and csflag
       if (flaghf) then
         write (6, 5)
@@ -329,6 +325,7 @@ c
         end if
         lwork = 144
         call dsyev('V','L',isize,e,narray,eig,work,lwork,ierr)
+cend
         do mm = 1, isize
           nlist = nlist + 1
 *  eigenvalues stored in order of increasing energy (lowest KP first)

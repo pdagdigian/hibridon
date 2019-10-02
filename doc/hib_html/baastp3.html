@@ -1,39 +1,34 @@
 <TITLE>bastp</TITLE>
-<h3><center><font color=#brown >Basis Subroutine
- and System Specific Parameters: Collision of an Atom with
-an Asymmetric Top
-</h3>
+<h3><center><font color=#brown >Basis Subroutine and System Specific Parameters: Collision of an Asymmetric Top with a Closed-Shell Linear Molecule
+</h30
 </center></font><hr>
 
 
-<tt>BASISTYPE = 16</tt><p>
+<tt>BASISTYPE = 30</tt><p>
 <ul>
-	System subroutine: <tt>syatp</tt><p>
-	Basis subroutine: <tt>hibaastp.f</tt></ul>
+	System subroutine: <tt>sysatp3 </tt><p>
+	Basis subroutine: <tt>hibaastp3.f</tt></ul>
 
 <p>
-<font size=-1><i>Ref.</i> B. J. Garrison <i>et al.</i>, J. Chem. Phys. <b>65</b>, 2193 (1976); S. Green, J. Chem. Phys. <b>64</b>, 3463 (1976); <b>67</b>, 816 (1979).</font>
+<font size=-1><i>Refs.</i> T. R. Phillips, S. Maluendes, and S. Green, J. Chem. Phys. <b>102</b>, 6024 (1995); P. Valiron <i>et al.</i>, J. Chem. Phys. <b>129</b>, 134306 (2008).</font>
 <hr>
-Here, the body-frame z axis is taken to lie along the <i>a</i> inertial axis.  For an alternate definition, see the hibaastp1 basis routine.<p>
+This basis subroutine pertains to collisions of an asymmetric top molecule of <i>C</i><sub>2v</sub> or <i>C</i><sub>s</sub> symmetry with a closed-shell diatomic molecule. 
+For a <i>C</i><sub>2v</sub> molecule, the body-frame z axis is taken to lie along the <i>C</i><sub>2</sub> axis,, following Green's convention.  
+For a molecule with <i>C</i><sub>s</sub> symmetry<p>, the body-frame z axis is taken to lie along the <i>a</i> inertial axis.<p>
 
 The definition of the system dependent parameters is as follows:
 <ul>     NTERM:  the number of potential surfaces involved.  This parameter can not be changed<p>
      NUMPOT:  an index representing the particular potential used.  This variable
 is passed to the POT subroutine<p>
-    IPOTSY:   cylindrical symmetry of potential.  The variables (theta,phi) describing the angular expansion of the
-    potential should be defined with the <i>a</i> inertial axis defined as the body-frame <i>z</i> axis and, if
-    possible, the <i>xz</i> plane as a plane of symmetry of the molecule (in this case, POTSY = 2).  
-    If the <a href=flags.html> flag</a> <a href=ihomo.html>IHOMO</a> = .true.,
-    only terms with LAMBDA + MU equal to an integer multiple of IPOTSY
-              can be included in the potential.  Example:  for H<sub>2</sub>O,
-              IPOTSY = 2<p>
-    IOP:      <i>ortho/para</i> label for molecular states of the asymmetric top. If <a href=ihomo.html>IHOMO</a> 
+    IOP:      <i>ortho/para</i> label for molecular states of the asymmetric top of <i>C</i><sub>2v</sub> symmetry. If <a href=ihomo.html>IHOMO</a> 
 =.true.
               then 
 <ul>if IOP = 1: only <i>para</i> states included in channel expansion<br>
 if IOP = &minus;1: only <i>ortho</i> states included in channel expansion
               </ul><p>
+    IOP is not needed if <a href=ihomo.html>IHOMO</a> =.false. (for a molecule of <i>C</i><sub>s</sub> symmetry, but a number should be entered for this parameter nevertheless.<p>
     JMAX:    the maximum rotational angular momentum included in the channel expansion<p>
+    IPOTSY2:  symmetry of potential.  Set equal to 2 for homonuclear molecule 2, or 1 for heteronuclear molecule.<p>
 </ul>
 
 The definition of the real system dependent parameters is as follows:

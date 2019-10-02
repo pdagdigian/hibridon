@@ -11,7 +11,7 @@
 *
 *  modification of hibaastp basis routine
 *
-*  here, the body-frame z system lies along the C2 axis of the molecule,
+*  here, the body-frame z system is taken to lie along the C2 axis of the molecule,
 *  following green's convention
 *
 *  author:  paul dagdigian

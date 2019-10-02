@@ -1,7 +1,8 @@
 * ----------------------------------------------------------------------
 *  subroutine to determine angular coupling potential for collision
-*  of an asymmetric top molecule with a structureless atom or with an
-*  uncorrugated surface
+*  of an asymmetric top molecule having no symmetry elements, e.g. a chiral
+*  molecule, with a structureless atom or with an uncorrugated surface
+*
 *  author:  paul dagdigian
 *  revision:  6-jun-2013 by q. ma (fix a bug in counting anisotropic
 *     terms)
